@@ -36,6 +36,12 @@ We applied eXtreme Gradient Boosting (XGBoost) to build the machine learning mod
 
 ## Machine learning model performance & evaluation
 To evaluate our ML models, we used nested cross-validation with five outer folds and five inner folds (5x5 nested-CV).
+
+<p align="center">
+  Overview of nested crossvalidation
+  <img align="middle" src="./nested-cv.jpg" alt="nested-cv"  />
+</p>
+
 #### Pseudocode of Nested crossvalidation 
 Nested 5x5 Cross-Validation in our study
 1.	Define set of hyper-parameter combinations, **C**, for XGBoost.
