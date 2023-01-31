@@ -67,3 +67,18 @@ Nested 5x5 Cross-Validation in our study
     d.	Train model on the remaining 4 folds using hyperparameter combination that yielded best average performance over all steps of the inner loop
     e.	Evaluate model performance on outer fold i
 4.	Calculate average performance over 5 outer folds
+
+# Requirement 
+To run the code:
+* python 3.5+
+* numpy
+* pandas
+* sklearn
+* os
+* matplotlib
+* scipy
+* hcuppy
+* shap
+* pickle
+* torch
+* xgboost
