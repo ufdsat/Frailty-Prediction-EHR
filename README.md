@@ -1,7 +1,7 @@
 # Frailty-Prediction-EHR
 EHR-based frailty prediction using machine learning
 
-In this study, we created machine learning models to predict frailty against Fred Frailty Phenotype (treated as ground truth) in pre-operative settings for older adults (aged 65 and above) using patients' electronic health records (EHR). 
+In this study, we developed machine learning models to predict frailty against Fred Frailty Phenotype (treated as ground truth) in pre-operative settings for older adults (aged 65 and above) using patients' electronic health records (EHR). 
 
 We built two types of models: 
   - A comprehensive model including all surgical services that patients in our cohort underwent.
@@ -31,11 +31,16 @@ We compared three data imputation methods 1) mean imputation, 2) median imputait
 
 Numerical features were scaled to range between 0 and 1. Categorical features were encoded to be from 1 to K (number of categories).
 
-## Machine learning model development 
+## Machine learning model 
 We applied eXtreme Gradient Boosting (XGBoost) to build the machine learning models. To overcome data imbalance, the weights of the minority class were set to be the ratio between the number of non-frail patients and frail patients for each surgical service. 
 
 ## Machine learning model performance & evaluation
-To evaluate our ML models, we used nested cross-validation with five outer folds and five inner folds (5x5 nested-CV).
+To evaluate our ML models, we used nested cross-validation with five outer folds and five inner folds (5x5 nested-CV). We evaluated the model performance using:
+  - Area under the receiver operating characteristic curve (AUROC),
+  - Accuracy, 
+  - Balanced accuracy,
+  - Sensitivity
+  - Specificity
 
 <p align="center">
   Overview of nested crossvalidation
@@ -67,6 +72,9 @@ Nested 5x5 Cross-Validation in our study
     d.	Train model on the remaining 4 folds using hyperparameter combination that yielded best average performance over all steps of the inner loop
     e.	Evaluate model performance on outer fold i
 4.	Calculate average performance over 5 outer folds
+
+# Statistical test
+The performance of machine learning models and Rockwood index was compared using McNemar's test. The correlation between the frailty risk score (0-1) from machine learning models and the Rockwood frailty index was assessed using Pearson's correlation coefficients.
 
 # Requirement 
 To run the code:
