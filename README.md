@@ -32,7 +32,11 @@ We compared three data imputation methods 1) mean imputation, 2) median imputait
 Numerical features were scaled to range between 0 and 1. Categorical features were encoded to be from 1 to K (number of categories).
 
 ## Machine learning model 
-We applied eXtreme Gradient Boosting (XGBoost) to build the machine learning models. To overcome data imbalance, the weights of the minority class were set to be the ratio between the number of non-frail patients and frail patients for each surgical service. 
+We applied eXtreme Gradient Boosting (XGBoost) to build the machine learning models. To overcome data imbalance, the weights of the minority class were set to be the ratio between the number of non-frail patients and frail patients for each surgical service. Grid search was used to fine-tune hyperparameters.
+
+| Machine learning model  | Parameters tuned                                                                                                                                                                                                  |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| XGBoost     | 1. Learning rate;<br>2. Max tree depth;<br>3. Minimum child weight;<br>4. Subasmple ratio of the training instances;<br>5. Subsample ratio of columns;<br>6. Number of trees                                                                                                        |
 
 ## Machine learning model performance & evaluation
 To evaluate our ML models, we used nested cross-validation with five outer folds and five inner folds (5x5 nested-CV). We evaluated the model performance using:
